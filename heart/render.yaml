@@ -3,9 +3,8 @@ services:
   - type: web
     name: heart-backend
     runtime: python
-    rootDir: backend
-    buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: cd backend && uvicorn main:app --host 0.0.0.0 --port $PORT
     plan: free
     envVars:
       - key: LLM_PROVIDER
@@ -33,9 +32,8 @@ services:
   - type: web
     name: heart-frontend
     runtime: node
-    rootDir: XHS-Analyzer-Demo
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    buildCommand: cd XHS-Analyzer-Demo && npm install && npm run build
+    startCommand: cd XHS-Analyzer-Demo && npm start
     plan: free
     envVars:
       - key: NEXT_PUBLIC_API_URL
