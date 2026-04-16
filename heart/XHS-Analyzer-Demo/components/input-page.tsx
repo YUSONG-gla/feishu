@@ -4,9 +4,10 @@ import { useState } from "react";
 
 interface InputPageProps {
   onAnalyze: (text: string) => void;
+  apiError?: string | null;
 }
 
-export function InputPage({ onAnalyze }: InputPageProps) {
+export function InputPage({ onAnalyze, apiError }: InputPageProps) {
   const [text, setText] = useState("");
   const [showError, setShowError] = useState(false);
   const [shake, setShake] = useState(false);
@@ -53,10 +54,12 @@ export function InputPage({ onAnalyze }: InputPageProps) {
       {/* Input Area */}
       <div className="w-full max-w-2xl relative">
         {/* Error Speech Bubble */}
-        {showError && (
+        {(showError || apiError) && (
           <div className="absolute -top-16 left-1/2 -translate-x-1/2 animate-fade-in-up">
             <div className="relative bg-white border-2 border-black px-4 py-2">
-              <span className="text-sm font-medium">哎呀，你还没给我投喂文字呢。</span>
+              <span className="text-sm font-medium">
+                {apiError || "哎呀，你还没给我投喂文字呢。"}
+              </span>
               {/* Speech bubble tail */}
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-black" />
               <div className="absolute -bottom-[5px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-6 border-r-6 border-t-6 border-l-transparent border-r-transparent border-t-white" />

@@ -1,0 +1,47 @@
+services:
+  # ─── 后端：FastAPI 评分服务 ───────────────────────────────────────────────
+  - type: web
+    name: heart-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: LLM_PROVIDER
+        value: deepseek
+      - key: DEEPSEEK_API_KEY
+        sync: false          # 在 Render 控制台手动填写
+      - key: DEEPSEEK_MODEL
+        value: deepseek-chat
+      - key: DEEPSEEK_BASE_URL
+        value: https://api.deepseek.com/v1
+      - key: GEMINI_API_KEY
+        sync: false          # 备用，可选填
+      - key: GEMINI_MODEL
+        value: gemini-2.0-flash
+      - key: OPENAI_API_KEY
+        sync: false          # 备用，可选填
+      - key: OPENAI_MODEL
+        value: gpt-4o
+      - key: LLM_TIMEOUT
+        value: "60"
+      - key: LLM_MAX_RETRIES
+        value: "2"
+
+  # ─── 前端：Next.js 展示页面 ───────────────────────────────────────────────
+  - type: web
+    name: heart-frontend
+    runtime: node
+    rootDir: XHS-Analyzer-Demo
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        fromService:
+          name: heart-backend
+          type: web
+          envVarKey: RENDER_EXTERNAL_URL   # Render 自动注入的完整 https:// URL
+      - key: PORT
+        value: "3000"
