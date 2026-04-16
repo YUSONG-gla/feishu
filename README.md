@@ -16,7 +16,6 @@
   <img src="docs/output.gif" alt="结果界面" width="48%" />
 </p>
 
----
 
 ## 项目灵感
 
@@ -24,7 +23,6 @@
 
 这背后的秘密，是**共情力**。
 
----
 
 ## 理论基础：HEART 叙事框架
 
@@ -47,7 +45,6 @@ HEART 框架从四个叙事层面分析文本：
 
 本系统从 HEART 框架中提炼出 **9 个核心评分维度**，通过 LLM 对文本进行打分，量化其共情潜力。
 
----
 
 ## 评分体系
 
@@ -73,7 +70,6 @@ HEART 框架从四个叙事层面分析文本：
      + 0.03×矛盾解决程度 + 0.03×角色发展程度 + 0.02×情绪转变程度
 ```
 
----
 
 ### 技术栈
 
@@ -99,7 +95,6 @@ HEART 框架从四个叙事层面分析文本：
 | 样式 | Tailwind CSS 4 |
 | 表单 | React Hook Form + Zod |
 
----
 
 ## 目录结构
 
@@ -124,7 +119,6 @@ feishu-main/
     └── start.sh                    # 后端启动脚本
 ```
 
----
 
 ## 快速开始
 
@@ -163,7 +157,6 @@ npm run dev
 
 访问 `http://localhost:3000` 开始测评。
 
----
 
 ## 环境变量配置
 
@@ -176,7 +169,6 @@ npm run dev
 NEXT_PUBLIC_API_URL=http://localhost:8000
 ```
 
----
 
 ## 部署到 Render.com
 
@@ -188,7 +180,6 @@ NEXT_PUBLIC_API_URL=http://localhost:8000
 4. 在后端服务的环境变量中手动填写 `DEEPSEEK_API_KEY`
 5. 前端 `NEXT_PUBLIC_API_URL` 自动注入后端地址，无需手动配置
 
----
 
 ## ML 校准层
 
@@ -207,7 +198,6 @@ python calibration/trainer.py --csv <数据集.csv>
 
 `calibrators.pkl` 存在时自动生效；不存在时直接使用 LLM 原始分数，不影响系统正常运行。
 
----
 
 ## 测试
 
@@ -220,7 +210,6 @@ pytest tests/test_parser.py -v          # JSON 解析器单元测试
 pytest tests/test_api.py -v             # API 集成测试（Mock LLM，无需真实 Key）
 ```
 
----
 
 ## 参考论文
 
