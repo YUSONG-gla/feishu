@@ -47,7 +47,7 @@ export function InputPage({ onAnalyze, apiError }: InputPageProps) {
           </h1>
         </div>
         <p className="text-base md:text-lg text-gray-600 font-medium">
-          基于 HEART 叙事理论与 DAG 算法的深度测评系统
+          你的文字，真的能击中ta们吗？
         </p>
       </div>
 
@@ -91,7 +91,7 @@ export function InputPage({ onAnalyze, apiError }: InputPageProps) {
 
       {/* Footer hint */}
       <p className="mt-8 text-sm text-gray-400">
-        支持分析各类小红书笔记文案｜你的文字，真的能击中ta们吗？
+        支持分析各类小红书笔记文案
       </p>
     </div>
   );
