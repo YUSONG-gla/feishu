@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c 'import ast, sys, os; errors=[]:*)",
+      "Bash(py --version)",
+      "Bash(python -c \"import ast; print\\(ast.parse\\(open\\('D:/Users/Claire/Desktop/heart/heart/backend/main.py',encoding='utf-8'\\).read\\(\\)\\) and 'OK'\\)\")",
+      "Bash(python -m py_compile \"D:/Users/Claire/Desktop/heart/heart/backend/main.py\")",
+      "Bash(echo \"exit $?\")",
+      "Bash(where python:*)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(E:/ANACONDA/python.exe -m pip install fastapi pydantic pydantic-settings python-dotenv httpx openai json5 pytest pytest-asyncio anyio)",
+      "Bash(E:/ANACONDA/python.exe -m pytest tests/test_calculator.py tests/test_parser.py -v)"
+    ]
+  }
+}

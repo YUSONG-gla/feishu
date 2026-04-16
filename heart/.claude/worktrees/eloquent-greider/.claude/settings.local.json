@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone:*)",
+      "Read(//c/Users/27666/Desktop/cocraw-tasks//**)",
+      "Read(//c/Users/27666/.git/**)",
+      "Bash(rm -rf /c/Users/27666/.git)",
+      "Bash(rm -rf /c/Users/27666/submissions)"
+    ]
+  }
+}
