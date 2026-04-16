@@ -2,7 +2,7 @@
 
 **你的文字，真的能击中 ta 们吗？**
 
-> 基于 HEART 叙事理论 × DAG 算法的小红书文案共情力深度测评系统
+> 基于HEART叙事理论的小红书文案共情力深度测评系统
 
 <p align="center">
   <a href="https://heart-frontend-h2yw.onrender.com/" target="_blank">
